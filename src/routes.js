@@ -1,5 +1,6 @@
 import React from "react";
-import Landing from "./Landing";
+import { Route } from "react-router";
+import Landing from "./Pages/Landing";
 import shortID from "shortid";
 
 const routes = [
