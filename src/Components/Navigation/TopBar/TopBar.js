@@ -15,9 +15,9 @@ function TopBar(props) {
                     <p>{mm} {dd}, {yyyy}</p>
                 </div>
                 <div className="nav-topbar-right">
-                <div className="nav-topbar-button"><a href="#">Login</a></div>
-                <div className="nav-topbar-button"><a href="#">Site Map</a></div>
-                <div className="nav-topbar-button"><a href="#">Contact</a></div>
+                <div className="nav-topbar-button"><a href="login.html">Login</a></div>
+                <div className="nav-topbar-button"><a href="site-map.html">Site Map</a></div>
+                <div className="nav-topbar-button"><a href="contact.html">Contact</a></div>
                 </div>
             </div>
         </nav>

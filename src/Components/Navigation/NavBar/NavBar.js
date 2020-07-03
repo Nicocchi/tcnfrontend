@@ -6,36 +6,36 @@ function NavBar(props) {
     return (
         <>
         <nav className="nav-navbar">
-            <span><a href="#">Home</a></span>
-            <span><a href="#">Police Reports</a></span>
+            <span><a href="index.html">Home</a></span>
+            <span><a href="police-reports">Police Reports</a></span>
             <div className="dropdown">
-                <span><a href="#">Sports</a><div className="dropdown-arrow" /></span>
+                <span><a href="sports">Sports</a><div className="dropdown-arrow" /></span>
                 <div className="dropdown-content">
-                    <a href="#">Label</a>
-                    <a href="#">Label</a>
-                    <a href="#">Label</a>
+                    <a href="example.html">Label</a>
+                    <a href="example.html">Label</a>
+                    <a href="example.html">Label</a>
                 </div>
             </div>
-            <span><a href="#">Obituaries</a></span>
+            <span><a href="obituaries.html">Obituaries</a></span>
             <div className="dropdown">
-                <span><a href="#">Food</a><div className="dropdown-arrow" /></span>
+                <span><a href="food.html">Food</a><div className="dropdown-arrow" /></span>
                 <div className="dropdown-content">
-                    <a href="#">Food</a>
-                    <a href="#">Label</a>
-                    <a href="#">Label</a>
+                    <a href="example.html">Food</a>
+                    <a href="example.html">Label</a>
+                    <a href="example.html">Label</a>
                 </div>
             </div>
             <div className="dropdown">
-                <span><a href="#">Entertainment</a><div className="dropdown-arrow" /></span>
+                <span><a href="entertainment.html">Entertainment</a><div className="dropdown-arrow" /></span>
                 <div className="dropdown-content">
-                    <a href="#">Entertainment</a>
-                    <a href="#">Label</a>
-                    <a href="#">Label</a>
+                    <a href="example.html">Entertainment</a>
+                    <a href="example.html">Label</a>
+                    <a href="example.html">Label</a>
                 </div>
             </div>
-            <span><a href="#">Classifieds</a></span>
-            <span><a href="#">Subscribe</a></span>
-            <span><a href="#">Search</a></span>
+            <span><a href="classifieds.html">Classifieds</a></span>
+            <span><a href="subscribe.html">Subscribe</a></span>
+            <span><a href="search.html">Search</a></span>
         </nav>
         
         </>
