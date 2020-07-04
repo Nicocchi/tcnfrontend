@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import NavBar from './Components/Navigation/NavBar';
 import './App.scss';
 import routes from "./routes";
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className="App-content">
       <Switch>{routes}</Switch>
       </div>
+      <Footer />
     </div>
   );
 }
