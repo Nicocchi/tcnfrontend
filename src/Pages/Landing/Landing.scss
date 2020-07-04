@@ -8,8 +8,6 @@
 .landing-weather {
     display: flex;
     margin-top: 20px;
-    // align-items: center;
-    // border: 1px solid red;
 
     .weather-p {
         font-size: 26px;
@@ -29,7 +27,6 @@
 .recents-box {
     display: flex;
     flex-wrap: wrap;
-    // width: 60%;
     justify-content: space-between;
     border-bottom: 1px solid #EEEEEE;
     margin-top: 20px;
@@ -38,14 +35,12 @@
 .recents-box-alt {
     display: flex;
     flex-wrap: wrap;
-    // width: 60%;
     justify-content: space-between;
     margin-top: 20px;
 }
 
 
 .landing-columns {
-    // width: 72%;
     display: flex;
 }
 
@@ -57,4 +52,24 @@
     max-width: 1140px;
     margin: 0 auto;
     color: #FFF;
+}
+
+.landing-entertainment {
+    margin-left: 30px;
+}
+
+@media(max-width: 768px) {
+    .col-left, .col-right {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .landing-entertainment {
+        margin-left: 0;
+    }
+
+    .landing-columns {
+        width: 100%;
+        display: block;
+    }
 }

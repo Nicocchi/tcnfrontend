@@ -42,3 +42,9 @@
     text-transform: uppercase;
     margin-bottom: 30px;
 }
+
+@media(max-width: 768px) {
+    .mediabox-alt-wrapper {
+        width: 100% !important;
+    }
+}

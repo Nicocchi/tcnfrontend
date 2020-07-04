@@ -1,4 +1,5 @@
 .carousel-wrapper {
+    position: relative;
     width: 100%;
     background: #000;
     max-height: 475px;
@@ -29,6 +30,7 @@
     position: absolute;
     color: #000;
     height: 100%;
+    top: 0;
     max-height: 475px;
     width: 100%;
     max-width: 1140px;

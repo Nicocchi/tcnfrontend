@@ -130,7 +130,7 @@ export default class landing extends Component {
                                     />
                                 </div>
                             </section>
-                            <section style={{ marginTop: "40px", marginLeft: "30px" }}>
+                            <section className="landing-entertainment" style={{ marginTop: "40px"}}>
                                 <HeaderBox value="Entertainment" width="170px" />
                                 <div className="recents-box">
                                     <MediaBox

@@ -24,7 +24,7 @@ class SideNavBar extends Component {
 
     render() {
         return (
-            <div>
+            <div className="sidenavbar-wrapper">
                 <section style={{ marginTop: "40px" }}>
                     <HeaderBox value="Find us on Facebook" width="230px" />
                     <div className="sidenavbar-section" style={{height: "188px", backgroundColor: "#e2e2e2"}}>
