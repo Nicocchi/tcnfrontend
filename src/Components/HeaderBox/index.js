@@ -8,7 +8,8 @@ function HeaderBox(props) {
         color: props.color,
         backgroundColor: props.bgColor,
         width: props.width,
-        height: props.height
+        height: props.height,
+        fontSize: props.fontSize
     }
     return (
         <div className="headerbox-wrapper" style={style}>

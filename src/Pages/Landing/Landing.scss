@@ -5,6 +5,18 @@
     margin: 0 auto;
 }
 
+.landing-weather {
+    display: flex;
+    margin-top: 20px;
+    // align-items: center;
+    // border: 1px solid red;
+
+    .weather-p {
+        font-size: 26px;
+        margin-left: 10px;
+    }
+}
+
 .col-left {
     width: 68%;
 }

@@ -16,6 +16,11 @@ export default class landing extends Component {
         return (
             <div>
                 <div className="landing-wrapper">
+                    <div className="landing-weather">
+                        <HeaderBox value="Weather" />
+                        <p className="weather-p">85°F</p>
+                    </div>
+                
                 <Carousel />
                     <div className="col-left">
                         <section style={{ marginTop: "40px" }}>

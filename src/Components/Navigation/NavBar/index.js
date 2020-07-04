@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./NavBar.scss";
 
 function NavBar(props) {
@@ -35,7 +37,7 @@ function NavBar(props) {
             </div>
             <span><a href="classifieds.html">Classifieds</a></span>
             <span><a href="subscribe.html">Subscribe</a></span>
-            <span><a href="search.html">Search</a></span>
+            <span><a href="search.html"><FontAwesomeIcon icon={faSearch} size="md" color="#FFF" /></a></span>
         </nav>
         
         </>
