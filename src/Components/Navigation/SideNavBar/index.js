@@ -39,7 +39,7 @@ class SideNavBar extends Component {
                         {
                             this.state.poll.answers.map((ans, index) => 
                             <>
-                            <label class="container">ans
+                            <label class="container">{ans}
                             <input type="radio" onClick={() => this.handleCheck(index)} checked={this.state.pollAnswer === index ? true : false} name="radio"/>
                             <span class="checkmark"></span>
                         </label>
