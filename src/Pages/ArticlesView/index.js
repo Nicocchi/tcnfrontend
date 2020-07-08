@@ -8,7 +8,6 @@ import Pagination from "../../Components/Pagination"
 
 function ArticlesView(props) {
     if (!props.articles) return <div></div>;
-    const articles = props.articles;
 
     return (
         <div className="articles-wrapper">
