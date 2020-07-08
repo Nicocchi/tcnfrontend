@@ -6,17 +6,6 @@ import ArticleBox from "../../Components/ArticleBox";
 import shortid from "shortid";
 import Pagination from "../../Components/Pagination"
 
-Array.prototype.chunk = function (chunk_size) {
-    var temp = this.slice(0),
-        results = [];
-      
-    while (temp.length) {
-      results.push(temp.splice(0, chunk_size));
-    }
-  
-    return results;
-};
-
 function ArticlesView(props) {
     if (!props.articles) return <div></div>;
     const articles = props.articles;
