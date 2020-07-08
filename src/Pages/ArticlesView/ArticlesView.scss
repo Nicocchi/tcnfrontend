@@ -1,0 +1,39 @@
+.articlesview-section {
+    margin-top: 40px;
+}
+
+.articles-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.articles-header {
+    display: flex;
+    margin-top: 20px;
+}
+
+.col-left-articles {
+    width: 68%;
+    padding-left: 2%;
+}
+
+.col-right-articles {
+    width: 30%;
+    margin-left: 2%;
+}
+
+.articles-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+@media(max-width: 768px) {
+    .col-left, .col-right {
+        width: 100%;
+        margin-left: 0px;
+    }
+}

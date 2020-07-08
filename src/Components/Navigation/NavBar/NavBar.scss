@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    z-index: 100;
 
     span {
         display: flex;
@@ -18,6 +19,22 @@
     }
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky2 {
+    position: fixed;
+    top: 163px;
+    width: 100%;
+}
+
+.sticky + .content {
+    padding-top: 60px;
+  }
+
 .dropdown {
     &:hover > .dropdown-content {
         display: flex;
@@ -27,14 +44,14 @@
 .dropdown-content {
     // border: 1px solid red;
     width: 100%;
-    position: fixed;
+    position: absolute;
     background: #000;
     // display: flex;
     left: 0;
     flex-direction: column;
     align-items: center;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 101;
     display: none;
     padding-bottom: 20px;
 }

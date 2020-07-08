@@ -33,6 +33,11 @@ function MediaBox(props) {
     );
 }
 
-MediaBox.propTypes = {};
+MediaBox.propTypes = {
+    title: PropTypes.string,
+    content: PropTypes.string,
+    date: PropTypes.string,
+    author: PropTypes.string
+};
 
 export default MediaBox;

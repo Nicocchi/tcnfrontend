@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import HeaderBox from "../HeaderBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import "./MediaBoxAlt.scss";
@@ -28,6 +27,10 @@ function MediaBoxAlt(props) {
     );
 }
 
-MediaBoxAlt.propTypes = {};
+MediaBoxAlt.propTypes = {
+    date: PropTypes.string,
+    img: PropTypes.bool,
+    width: PropTypes.string
+};
 
 export default MediaBoxAlt;

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import "./Carousel.scss";
 import HeaderBox from "../HeaderBox";
+import shortid from "shortid";
 
 class Carousel extends Component {
     constructor(props) {
@@ -35,24 +36,26 @@ class Carousel extends Component {
     }
 
     nextSlide = () => {
-        let slideIndex = (this.state.slideIndex += 1);
-        if (slideIndex >= this.state.slides.length) {
-            slideIndex = 0;
+        let slideIndex = this.state.slideIndex;
+        let newSlideIndex = slideIndex += 1;
+        if (newSlideIndex >= this.state.slides.length) {
+            newSlideIndex = 0;
         }
         this.setState({
-            slideIndex,
+            slideIndex: newSlideIndex,
         });
     };
 
     prevSlide = () => {
-        let slideIndex = (this.state.slideIndex -= 1);
-        console.log(slideIndex);
-        if (slideIndex <= 0) {
-            slideIndex = this.state.slides.length;
-            console.log("less than 0", slideIndex);
+        let slideIndex = this.state.slideIndex;
+        let newSlideIndex = slideIndex -= 1;
+        console.log(newSlideIndex);
+        if (newSlideIndex <= 0) {
+            newSlideIndex = this.state.slides.length;
+            console.log("less than 0", newSlideIndex);
         }
         this.setState({
-            slideIndex,
+            newSlideIndex,
         });
     };
 
@@ -61,8 +64,8 @@ class Carousel extends Component {
             <section className="carousel-wrapper">
                 <div className="carousel-inner">
                     {this.state.slides.map((slide, index) => (
-                        <div key={index} className={`item ${index === this.state.slideIndex ? "active" : ""}`}>
-                            <img src={slide.url} atl="carousel" />
+                        <div key={shortid.generate()} className={`item ${index === this.state.slideIndex ? "active" : ""}`}>
+                            <img src={slide.url} alt="carousel" />
                         </div>
                     ))}
                 </div>
@@ -88,6 +91,6 @@ class Carousel extends Component {
     }
 }
 
-Carousel.propTypes = {};
+// Carousel.propTypes = {};
 
 export default Carousel;

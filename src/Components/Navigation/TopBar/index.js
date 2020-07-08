@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import "./TopBar.scss";
 
 function TopBar(props) {
@@ -24,9 +24,9 @@ function TopBar(props) {
     )
 }
 
-TopBar.propTypes = {
+// TopBar.propTypes = {
 
-}
+// }
 
 export default TopBar
 

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import HeaderBox from "../../Components/HeaderBox";
 import MediaBox from "../../Components/MediaBox";
 import "./Landing.scss";
@@ -8,9 +7,6 @@ import Carousel from "../../Components/Carousel";
 import SideNavBar from "../../Components/Navigation/SideNavBar";
 
 export default class landing extends Component {
-    static propTypes = {
-        prop: PropTypes,
-    };
 
     render() {
         return (
