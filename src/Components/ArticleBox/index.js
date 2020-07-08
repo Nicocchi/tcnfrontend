@@ -9,8 +9,6 @@ export default function ArticleBox(props) {
     const mmd = date.getMonth() + 1;
     const yyyy = date.getFullYear();
 
-    console.log(props);
-
     return (
         <div style={{ marginTop: "20px", marginBottom: "20px", borderBottom: "1px solid #EEEEEE" }}>
             <Link style={{color: "#000"}} to={`/police-reports/${yyyy}/${mmd}/${dd}/${props.article.fields.title}/#id=${props.article.sys.id}`}>
