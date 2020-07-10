@@ -32,8 +32,12 @@
 }
 
 @media(max-width: 768px) {
-    .col-left, .col-right {
+    .col-left-articles, .col-right-articles {
         width: 100%;
         margin-left: 0px;
+    }
+
+    .col-right-articles {
+        margin-left: 15px;
     }
 }
