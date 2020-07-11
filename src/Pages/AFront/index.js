@@ -47,7 +47,6 @@ export default class AFront extends Component {
     }
 
     changePage = (number) => {
-        console.log("NUM", number);
         this.setState({
             currentIndex: number - 1
         })

@@ -17,12 +17,18 @@ class Carousel extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log("UPDATED", this.props);
         if (prevProps.aFront !== this.props.aFront) {
             this.setState({
                 slides: this.props.aFront,
-            });
+            }, () => this.startSlideshow());
         }
+    }
+
+    startSlideshow = () => {
+        setTimeout(() => {
+            this.nextSlide();
+            this.startSlideshow();
+        }, 3000)
     }
 
     nextSlide = () => {
@@ -39,18 +45,15 @@ class Carousel extends Component {
     prevSlide = () => {
         let slideIndex = this.state.slideIndex;
         let newSlideIndex = (slideIndex -= 1);
-        console.log(newSlideIndex);
-        if (newSlideIndex <= 0) {
-            newSlideIndex = this.state.slides.length;
-            console.log("less than 0", newSlideIndex);
+        if (newSlideIndex < 0) {
+            newSlideIndex = this.state.slides.length - 1;
         }
         this.setState({
-            newSlideIndex,
+            slideIndex: newSlideIndex,
         });
     };
 
     render() {
-        console.log(this.state);
         if (this.state.slides.length <= 0) {
             return (
                 <section className="carousel-wrapper" style={{background: "#ececec"}}>

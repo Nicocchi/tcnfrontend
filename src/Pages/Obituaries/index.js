@@ -32,9 +32,7 @@ export default class ObituaryArticles extends Component {
                 response.items.forEach((entry, index) => {
                     if (entry.sys.contentType.sys.id === "obituaryArticles") articles.push(entry);
                 });
-                console.log("OB", articles)
                 let newArticles = articles.slice().sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
-                console.log(newArticles)
                 this.setState({
                     articles: newArticles,
                     maxArticleCount: articles.length
@@ -49,7 +47,6 @@ export default class ObituaryArticles extends Component {
     }
 
     changePage = (number) => {
-        console.log("NUM", number);
         this.setState({
             currentIndex: number - 1
         })

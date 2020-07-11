@@ -109,7 +109,7 @@ export default class Pagination extends React.Component {
                     <button className="pagination-btn" onClick={() => this.setPage(pager.currentPage - 1)}>Previous</button>
                 </li>
                 {pager.pages.map((page, index) =>
-                    <li key={index} className={pager.currentPage === page ? 'active' : ''}>
+                    <li key={index} className={pager.currentPage === page ? 'page-active' : ''}>
                         <button className={pager.currentPage === page ? 'pagination-active' : 'pagination-btn'} onClick={() => this.setPage(page)}>{page}</button>
                     </li>
                 )}

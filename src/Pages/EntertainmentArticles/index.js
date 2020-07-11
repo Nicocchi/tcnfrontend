@@ -47,7 +47,6 @@ export default class EntertainmentArticles extends Component {
     }
 
     changePage = (number) => {
-        console.log("NUM", number);
         this.setState({
             currentIndex: number - 1
         })
