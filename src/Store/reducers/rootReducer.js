@@ -5,7 +5,9 @@ const initialState = {
     policeReports: null,
     sportsArticles: null,
     obituaryArticles: null,
-    foodRecipes: null
+    foodRecipes: null,
+    entertainmentArticles: null,
+    aFront: null
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -20,7 +22,9 @@ const rootReducer = (state = initialState, action) => {
                 policeReports: action.payload.policeReports,
                 sportsArticles: action.payload.sportsArticles,
                 obituaryArticles: action.payload.obituaryArticles,
-                foodRecipes: action.payload.foodRecipes
+                foodRecipes: action.payload.foodRecipes,
+                entertainmentArticles: action.payload.entertainmentArticles,
+                aFront: action.payload.aFront
             };
         }
 

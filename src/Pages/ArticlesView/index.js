@@ -18,7 +18,7 @@ function ArticlesView(props) {
                 <section className="articlesview-section">
                     <div className="articles-box">
                     {props.pageOfItems.map(item =>
-                            <ArticleBox history={props.history} key={shortid.generate()} article={item} />
+                            <ArticleBox history={props.history} key={shortid.generate()} article={item} category={props.category} />
                         )}
                     </div>
                     <div className="articles-pagebar">

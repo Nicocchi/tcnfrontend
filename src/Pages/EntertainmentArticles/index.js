@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import PropTypes from 'prop-types'
 import ArticlesView from "../ArticlesView";
 var exampleItems = [...Array(150).keys()].map(i => ({ id: (i+1), name: 'Item ' + (i+1) }));
-export default class SportsArticles extends Component {
+export default class EntertainmentArticles extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,7 +30,7 @@ export default class SportsArticles extends Component {
             .then((response) => {
                 let articles = [];
                 response.items.forEach((entry, index) => {
-                    if (entry.sys.contentType.sys.id === "sportsArticle") articles.push(entry);
+                    if (entry.sys.contentType.sys.id === "entertainmentArticles") articles.push(entry);
                 });
                 let newArticles = articles.slice().sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
                 this.setState({
@@ -65,14 +65,15 @@ export default class SportsArticles extends Component {
                     articles={this.state.articles}
                     maxPages={this.state.maxPages}
                     maxArticleCount={this.state.maxArticleCount}
-                    title="Sports Articles"
+                    title="Entertainment Articles"
                     currentIndex={this.state.currentIndex}
+                    category="entertainment"
                 />
             </div>
         );
     }
 }
 
-// SportsArticles.propTypes = {
+// EntertainmentArticles.propTypes = {
 
 // }

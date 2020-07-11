@@ -3,7 +3,7 @@ var utilities = {
         const parsedDate = new Date(date);
         const dd = parsedDate.getDate();
         const mm = parsedDate.toLocaleString("default", { month: "long" });
-        const mmd = parsedDate.getMonth();
+        const mmd = parsedDate.getMonth() + 1;
         const yyyy = parsedDate.getFullYear();
 
         let newDate = "";
@@ -14,6 +14,12 @@ var utilities = {
                 break;
             case "mm dd, yyyy":
                 newDate = `${mm} ${dd}, ${yyyy}`
+                break;
+            case "yyyy/dd/mm":
+                newDate = `${yyyy}/${dd}/${mmd}`
+                break;
+            case "yyyy/mm/dd":
+                newDate = `${yyyy}/${mmd}/${dd}`
                 break;
             default:
                 newDate = `${mm} ${dd}, ${yyyy}`

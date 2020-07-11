@@ -30,7 +30,16 @@ class SideNavBar extends Component {
             <div className="sidenavbar-wrapper">
                 <section style={{ marginTop: "40px" }}>
                     <HeaderBox value="Find us on Facebook" width="230px" />
-                    <div className="sidenavbar-section" style={{ height: "188px", backgroundColor: "#e2e2e2" }}></div>
+                    <div className="sidenavbar-section" style={{ height: "188px" }}>
+                        <iframe
+                            title="Facebook Plugin"
+                            src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/troupcountynews&amp;width=300&amp;height=250&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false"
+                            scrolling="no"
+                            style={{ border: "none", overflow: "hidden", width: "100%", height: "250px" }}
+                            allowtransparency="true"
+                            frameBorder="0"
+                        ></iframe>
+                    </div>
                 </section>
                 <section style={{ marginTop: "40px" }}>
                     <HeaderBox value="Poll" width="140px" />
@@ -55,16 +64,23 @@ class SideNavBar extends Component {
                     <HeaderBox value="Obituaries" width="140px" />
                     <div className="sidenavbar-section poll">
                         {this.props.obituaryArticles ? (
-                            this.props.obituaryArticles.slice(0, 5).map((article) => (
-                                <MediaBoxAlt
-                                    width="100%"
-                                    date={utilities.formatDate(article.fields.date, "mm dd, yyyy")}
-                                    title={article.fields.title}
-                                    img={false}
-                                />
-                            ))
+                            this.props.obituaryArticles
+                                .slice(0, 5)
+                                .map((article) => (
+                                    <MediaBoxAlt
+                                        key={shortid.generate()}
+                                        width="100%"
+                                        date={utilities.formatDate(article.fields.date, "mm dd, yyyy")}
+                                        title={article.fields.title}
+                                        img={"false"}
+                                        link={`/obituaries/${utilities.formatDate(
+                                            article.fields.date,
+                                            "yyyy/mm/dd"
+                                        )}/${article.fields.title.replace(/ /g, "-")}/#id=${article.sys.id}`}
+                                    />
+                                ))
                         ) : (
-                            <MediaBoxAlt width="100%" title="Quam risus velit in a purus nisi urna" img={false} />
+                            <MediaBoxAlt width="100%" title="Quam risus velit in a purus nisi urna" img={"false"} />
                         )}
                     </div>
                 </section>

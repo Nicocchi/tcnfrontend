@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./NavBar.scss";
-import {Link, NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 
 function index(props) {
@@ -11,11 +11,11 @@ function index(props) {
         <Navbar sticky="top" className={`nav-navbar`}>
             <div className="dropdown">
                 <span>
-                <NavLink to="/">Home</NavLink>
+                    <NavLink to="/">Home</NavLink>
                     <div className="dropdown-arrow" />
                 </span>
                 <div className="dropdown-content">
-                <NavLink to="/eedition">E-Edition</NavLink>
+                    <NavLink to="/eedition">E-Edition</NavLink>
                 </div>
             </div>
             <span>
@@ -24,7 +24,7 @@ function index(props) {
             </span>
             <div className="dropdown">
                 <span>
-                <NavLink to="/sports-articles">Sports Articles</NavLink>
+                    <NavLink to="/sports-articles">Sports Articles</NavLink>
                     {/* <a href="sports-articles">Sports</a> */}
                     <div className="dropdown-arrow" />
                 </span>
@@ -47,24 +47,24 @@ function index(props) {
             </div>
             <div className="dropdown">
                 <span>
-                    <NavLink to="/food">Entertainment</NavLink>
+                    <NavLink to="/entertainment">Entertainment</NavLink>
                     <div className="dropdown-arrow" />
                 </span>
                 <div className="dropdown-content">
-                    <NavLink to="/food">Callaway Beacon</NavLink>
-                    <NavLink to="/food">Community Calendar</NavLink>
-                    <NavLink to="/food">Church Calendar</NavLink>
-                    <NavLink to="/food">TV Listings</NavLink>
+                    <NavLink to="/entertainment/callaway-beacon">Callaway Beacon</NavLink>
+                    <NavLink to="/entertainment/community-calendar">Community Calendar</NavLink>
+                    <NavLink to="/entertainment/church-calendar">Church Calendar</NavLink>
+                    <NavLink to="/entertainment/tv-listings">TV Listings</NavLink>
                 </div>
             </div>
             <span>
-                <NavLink to="/food">Classifieds</NavLink>
+                <NavLink to="/classifieds">Classifieds</NavLink>
             </span>
             <span>
-                <NavLink to="/food">Advertise</NavLink>
+                <NavLink to="/advertise">Advertise</NavLink>
             </span>
             <span>
-                <NavLink to="/food">Subscribe</NavLink>
+                <NavLink to="/subscribe">Subscribe</NavLink>
             </span>
             <span>
                 <a href="search.html">

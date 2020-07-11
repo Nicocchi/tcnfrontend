@@ -1,5 +1,5 @@
 import React from "react";
-import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 // /**
 //  * Options for formatting the Rich Text Document from Contentful
@@ -10,9 +10,9 @@ export const options = {
         // [MARKS.ITALIC]: text => {}
     },
     renderNode: {
-        // [BLOCKS.PARAGRAPH]: (node, children) => {
-            
-        // },
+        [BLOCKS.PARAGRAPH]: (node, children) => {
+        return (<p style={{width: "100%"}}>{children}</p>)
+        },
         // [BLOCKS.HEADING_1]: (node, children) => {
 
         // },

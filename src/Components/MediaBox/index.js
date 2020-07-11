@@ -4,18 +4,21 @@ import HeaderBox from "../HeaderBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import {NavLink} from "react-router-dom";
 import "./MediaBox.scss";
 
 function MediaBox(props) {
     return (
-        <div className="mediabox-wrapper" style={{ width: props.width }}>
-            <div className="mediabox-header">
+        // <div className="mediabox-wrapper" style={{ width: props.width }}>
+        <NavLink to={props.link ? props.link : "/"} className="mediabox-wrapper" style={{ width: props.width, color: props.color ? props.color : "#000" }}>
+            
+            <div className="mediabox-header" style={{backgroundColor: props.image ? "#FFF" : "#ececec", height: props.image ? "auto" : "200px", width: "100%" }}>
                 <img
-                    src={props.image ? props.image.fields.file.url : "https://images.unsplash.com/photo-1505513699077-1c91b82a7407?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"}
+                    src={props.image}
                     alt="media img"
                 />
                 <span className="mediabox-overlay">
-                    <HeaderBox value={props.category} color="#000" bgColor="#FFF" height="28px" />
+                    <HeaderBox value={props.category} color="#000" bgColor="#FFF" height="28px" width={props.headerWidth} />
                 </span>
             </div>
             <div className="mediabox-content">
@@ -32,7 +35,7 @@ function MediaBox(props) {
                 <h5>{props.author}</h5>
                 <h5>More</h5>
             </div>
-        </div>
+            </NavLink>
     );
 }
 

@@ -2,11 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import {NavLink} from "react-router-dom";
 import "./MediaBoxAlt.scss";
 
 function MediaBoxAlt(props) {
     return (
-        <div className="mediabox-alt-wrapper" style={{ width: props.width }}>
+        <NavLink to={props.link ? props.link : "/"} className="mediabox-alt-wrapper" style={{ width: props.width, color: props.color ? props.color : "#000" }}>
             <div className="mediabox-alt-header">
                 <span>
                     <FontAwesomeIcon icon={faCalendarAlt} size="lg" color="#ACAAAA" />
@@ -15,7 +16,7 @@ function MediaBoxAlt(props) {
             </div>
             <div className="mediabox-alt-content">
                 {
-                    !props.img || props.img === false ? null : <img
+                    !props.img || props.img === 'false' ? null : <img
                     src={props.img}
                     alt="media img"
                 />
@@ -23,13 +24,13 @@ function MediaBoxAlt(props) {
                 
                 <h4>{props.title}</h4>
             </div>
-        </div>
+        </NavLink>
     );
 }
 
 MediaBoxAlt.propTypes = {
     date: PropTypes.string,
-    img: PropTypes.bool,
+    img: PropTypes.string,
     width: PropTypes.string
 };
 
