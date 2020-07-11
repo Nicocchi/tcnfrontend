@@ -86,7 +86,7 @@ class Carousel extends Component {
                     {this.state.slides.map((slide, index) => (
                         <div
                             key={shortid.generate()}
-                            className={`item ${index === this.state.slideIndex ? "active" : ""}`}
+                            className={`item ${index === this.state.slideIndex ? "carousel-active" : ""}`}
                         >
                             <img
                                 src={
