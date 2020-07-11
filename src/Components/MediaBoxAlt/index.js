@@ -15,8 +15,8 @@ function MediaBoxAlt(props) {
             </div>
             <div className="mediabox-alt-content">
                 {
-                    props.img === false || !props.img ? null : <img
-                    src="https://images.unsplash.com/photo-1505513699077-1c91b82a7407?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                    !props.img || props.img === false ? null : <img
+                    src={props.img}
                     alt="media img"
                 />
                 }

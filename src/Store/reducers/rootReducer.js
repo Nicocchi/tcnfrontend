@@ -1,7 +1,11 @@
 import { CONSTANTS } from "../actions";
 
 const initialState = {
-    articles: []
+    articles: [],
+    policeReports: null,
+    sportsArticles: null,
+    obituaryArticles: null,
+    foodRecipes: null
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -11,7 +15,13 @@ const rootReducer = (state = initialState, action) => {
         }
 
         case CONSTANTS.FETCH_POST_SUCCESS: {
-            return { ...state, articles: action.payload.posts };
+            return {
+                ...state,
+                policeReports: action.payload.policeReports,
+                sportsArticles: action.payload.sportsArticles,
+                obituaryArticles: action.payload.obituaryArticles,
+                foodRecipes: action.payload.foodRecipes
+            };
         }
 
         default:

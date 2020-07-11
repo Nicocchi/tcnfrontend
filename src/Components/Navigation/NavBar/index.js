@@ -3,6 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import "./NavBar.scss";
+import {Link, NavLink} from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 
 function index(props) {
@@ -10,57 +11,60 @@ function index(props) {
         <Navbar sticky="top" className={`nav-navbar`}>
             <div className="dropdown">
                 <span>
-                    <a href="/">Home</a>
+                <NavLink to="/">Home</NavLink>
                     <div className="dropdown-arrow" />
                 </span>
                 <div className="dropdown-content">
-                    <a href="example.html">E-Edition</a>
+                <NavLink to="/eedition">E-Edition</NavLink>
                 </div>
             </div>
             <span>
-                <a href="police-reports">Police Reports</a>
+                <NavLink to="/police-reports">Police Reports</NavLink>
+                {/* <a href="police-reports">Police Reports</a> */}
             </span>
             <div className="dropdown">
                 <span>
-                    <a href="sports">Sports</a>
+                <NavLink to="/sports-articles">Sports Articles</NavLink>
+                    {/* <a href="sports-articles">Sports</a> */}
                     <div className="dropdown-arrow" />
                 </span>
                 <div className="dropdown-content">
-                    <a href="example.html">Label</a>
-                    <a href="example.html">Label</a>
-                    <a href="example.html">Label</a>
+                    <NavLink to="/sports/scoreboard">Scoreboard</NavLink>
                 </div>
             </div>
             <span>
-                <a href="obituaries.html">Obituaries</a>
+                <NavLink to="/obituaries">Obituaries</NavLink>
             </span>
             <div className="dropdown">
                 <span>
-                    <a href="food.html">Food</a>
+                    <NavLink to="/food">Food</NavLink>
                     <div className="dropdown-arrow" />
                 </span>
                 <div className="dropdown-content">
-                    <a href="example.html">Food</a>
-                    <a href="example.html">Label</a>
-                    <a href="example.html">Label</a>
+                    <NavLink to="/food/restaurant-inspections">Restaurant Inspections</NavLink>
+                    <NavLink to="/food/from-our-table-to-yours">From Our Table to Yours</NavLink>
                 </div>
             </div>
             <div className="dropdown">
                 <span>
-                    <a href="entertainment.html">Entertainment</a>
+                    <NavLink to="/food">Entertainment</NavLink>
                     <div className="dropdown-arrow" />
                 </span>
                 <div className="dropdown-content">
-                    <a href="example.html">Entertainment</a>
-                    <a href="example.html">Label</a>
-                    <a href="example.html">Label</a>
+                    <NavLink to="/food">Callaway Beacon</NavLink>
+                    <NavLink to="/food">Community Calendar</NavLink>
+                    <NavLink to="/food">Church Calendar</NavLink>
+                    <NavLink to="/food">TV Listings</NavLink>
                 </div>
             </div>
             <span>
-                <a href="classifieds.html">Classifieds</a>
+                <NavLink to="/food">Classifieds</NavLink>
             </span>
             <span>
-                <a href="subscribe.html">Subscribe</a>
+                <NavLink to="/food">Advertise</NavLink>
+            </span>
+            <span>
+                <NavLink to="/food">Subscribe</NavLink>
             </span>
             <span>
                 <a href="search.html">

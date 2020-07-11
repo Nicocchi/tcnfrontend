@@ -3,7 +3,9 @@ import React, { Component } from "react";
 import HeaderBox from "../../HeaderBox";
 import "./SideNavBar.scss";
 import MediaBoxAlt from "../../MediaBoxAlt";
+import { connect } from "react-redux";
 import shortid from "shortid";
+import utilities from "../../../utilities";
 
 class SideNavBar extends Component {
     constructor(props) {
@@ -52,42 +54,18 @@ class SideNavBar extends Component {
                 <section style={{ marginTop: "40px" }}>
                     <HeaderBox value="Obituaries" width="140px" />
                     <div className="sidenavbar-section poll">
-                        <MediaBoxAlt
-                            width="100%"
-                            date="1/01/2020"
-                            category="Sports"
-                            title="Quam risus velit in a purus nisi urna"
-                            content="lorum ipsum velit in a purus"
-                            author="Jane Doe"
-                            img={false}
-                        />
-                        <MediaBoxAlt
-                            width="100%"
-                            date="1/01/2020"
-                            category="Sports"
-                            title="Quam risus velit in a purus nisi urna"
-                            content="lorum ipsum velit in a purus"
-                            author="Jane Doe"
-                            img={false}
-                        />
-                        <MediaBoxAlt
-                            width="100%"
-                            date="1/01/2020"
-                            category="Sports"
-                            title="Quam risus velit in a purus nisi urna"
-                            content="lorum ipsum velit in a purus"
-                            author="Jane Doe"
-                            img={false}
-                        />
-                        <MediaBoxAlt
-                            width="100%"
-                            date="1/01/2020"
-                            category="Sports"
-                            title="Quam risus velit in a purus nisi urna"
-                            content="lorum ipsum velit in a purus"
-                            author="Jane Doe"
-                            img={false}
-                        />
+                        {this.props.obituaryArticles ? (
+                            this.props.obituaryArticles.slice(0, 5).map((article) => (
+                                <MediaBoxAlt
+                                    width="100%"
+                                    date={utilities.formatDate(article.fields.date, "mm dd, yyyy")}
+                                    title={article.fields.title}
+                                    img={false}
+                                />
+                            ))
+                        ) : (
+                            <MediaBoxAlt width="100%" title="Quam risus velit in a purus nisi urna" img={false} />
+                        )}
                     </div>
                 </section>
                 <section style={{ marginTop: "40px" }}>
@@ -103,4 +81,8 @@ class SideNavBar extends Component {
 
 // SideNavBar.propTypes = {};
 
-export default SideNavBar;
+function mapStateToProps(state) {
+    return { obituaryArticles: state.rootReducer.obituaryArticles };
+}
+
+export default connect(mapStateToProps)(SideNavBar);

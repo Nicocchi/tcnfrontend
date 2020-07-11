@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import queryString from "query-string";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import SideNavBar from "../../Components/Navigation/SideNavBar";
+import { options } from "./options";
 
 export default class Article extends Component {
     constructor(props) {
@@ -44,6 +45,13 @@ export default class Article extends Component {
             <div className="articles-wrapper">
                 <div className="col-left-articles">
                     <div className="articles-header">
+                        {
+                            this.state.article.fields.headerImage ? <img
+                            src={this.state.article.fields.headerImage.fields.file.url}
+                            alt={this.state.article.fields.headerImage.fields.file.subtitle}
+                        /> : null
+                        }
+                        
                         <h1>{this.state.article.fields.title}</h1>
                     </div>
                     <section className="articlesview-section">
@@ -51,7 +59,7 @@ export default class Article extends Component {
                             {mm} {dd}, {yyyy}
                         </p>
                         <div className="articles-box">
-                            {documentToReactComponents(this.state.article.fields.content)}
+                            {documentToReactComponents(this.state.article.fields.content, options)}
                         </div>
                     </section>
                 </div>

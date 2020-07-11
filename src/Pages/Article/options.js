@@ -25,12 +25,21 @@ export const options = {
         // [BLOCKS.HEADING_4]: (node, children) => {
 
         // },
+        [BLOCKS.HEADING_6]: (node, children) => {
+            return (
+                <p style={{width: "100%", textAlign: "center", fontSize: "1.2em"}}><strong>{children}</strong></p>
+            )
+        },
         // [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
 
         // },
 
         // [BLOCKS.EMBEDDED_ASSET]: (node, children) => {},
-        // [BLOCKS.UL_LIST]: (node, children) => {},
+        [BLOCKS.UL_LIST]: (node, children) => {
+            return (
+            <div style={{marginLeft: "5%", width: "100%"}}>{children}</div>
+            )
+        },
         // [BLOCKS.OL_LIST]: (node, children) => {
 
         // },
@@ -41,13 +50,11 @@ export const options = {
 
         // },
         [INLINES.EMBEDDED_ENTRY]: (node, children) => {
-            // console.log("OPTIONS", node)
-            // if (node.data.target.sys.contentType.sys.id === "imageBox") {
-            //     console.log("IMAGE BOX", node)
-            //     return (
-            //         <img src={node.data.target.fields.url} alt="d" />
-            //     )
-            // }
+            if (node.data.target.sys.contentType.sys.id === "imageBox") {
+                return (
+                    <img src={node.data.target.fields.image.fields.file.url} alt="d" />
+                )
+            }
         }
     }
 };

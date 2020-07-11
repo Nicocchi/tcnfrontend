@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import PropTypes from 'prop-types'
 import ArticlesView from "../ArticlesView";
 var exampleItems = [...Array(150).keys()].map(i => ({ id: (i+1), name: 'Item ' + (i+1) }));
-export default class PoliceReports extends Component {
+export default class ObituaryArticles extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,9 +30,11 @@ export default class PoliceReports extends Component {
             .then((response) => {
                 let articles = [];
                 response.items.forEach((entry, index) => {
-                    if (entry.sys.contentType.sys.id === "policeReport") articles.push(entry);
+                    if (entry.sys.contentType.sys.id === "obituaryArticles") articles.push(entry);
                 });
+                console.log("OB", articles)
                 let newArticles = articles.slice().sort((a, b) => new Date(b.fields.date) - new Date(a.fields.date));
+                console.log(newArticles)
                 this.setState({
                     articles: newArticles,
                     maxArticleCount: articles.length
@@ -65,7 +67,7 @@ export default class PoliceReports extends Component {
                     articles={this.state.articles}
                     maxPages={this.state.maxPages}
                     maxArticleCount={this.state.maxArticleCount}
-                    title="Police Reports"
+                    title="Obituaries"
                     currentIndex={this.state.currentIndex}
                 />
             </div>
@@ -73,6 +75,6 @@ export default class PoliceReports extends Component {
     }
 }
 
-// PoliceReports.propTypes = {
+// ObituaryArticles.propTypes = {
 
 // }

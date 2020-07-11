@@ -6,6 +6,17 @@
     border-bottom: 1px solid #EEEEEE;
 }
 
+.article-box-content {
+    display: flex;
+    margin-bottom: 20px;
+
+
+    img {
+        // width: 50%;
+        margin-right: 10px;
+    }
+}
+
 @media(max-width: 768px) {
     .article-box-wrapper {
         width: 100%;
