@@ -1,0 +1,9 @@
+
+export * from "./rootActions";
+
+export const CONSTANTS = {
+    EXAMPLE: "EXAMPLE",
+    FETCH_POSTS_START: "FETCH_POSTS_START",
+    FETCH_POST_SUCCESS: "FETCH_POST_SUCCESS",
+    FETCH_POST_FAILURE: "FETCH_POST_FAILURE"
+};

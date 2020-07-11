@@ -1,0 +1,21 @@
+.footer {
+    display: flex;
+    background-color: #000;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 40px;
+    color: #FFF;
+    flex-wrap: wrap;
+}
+
+.footer-center {
+    // width: 25%;
+    span {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        margin-left: 10px;
+    }
+}

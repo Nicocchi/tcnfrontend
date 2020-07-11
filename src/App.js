@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { withRouter, Switch } from "react-router-dom";
+import TopBar from "./Components/Navigation/TopBar";
+import Header from "./Components/Header";
+import NavBar from "./Components/Navigation/NavBar";
+import { fetchPost } from "./Store/actions";
+import { connect } from "react-redux";
+import "./App.scss";
+import routes from "./routes";
+import Footer from "./Components/Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isSticky: false,
+            hidden: false,
+        };
+    }
+
+    componentDidMount() {
+        this.props.fetchPost();
+    }
+    // <NavBar hidden={this.state.hidden} />
+    render() {
+        return (
+            <div className="App">
+                <TopBar />
+                <Header />
+                <NavBar hidden={this.state.hidden} />
+                <div className="App-content">
+                    <Switch>{routes}</Switch>
+                </div>
+                <Footer />
+            </div>
+        );
+    }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return { articles: state.rootReducer.articles };
+}
+
+export default connect(mapStateToProps, { fetchPost })(withRouter(App));
